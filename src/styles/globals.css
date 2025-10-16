@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-xl transition-all hover:bg-primary-hover hover:shadow-lg hover:scale-[1.02];
+  }
+  
+  .title-input {
+    @apply px-3 py-1.5 bg-transparent border-b-2 border-primary border-opacity-30 focus:border-opacity-100 outline-none transition-colors;
+    min-width: 240px;
+    display: inline-block;
+  }
+  
+  .typing-cursor {
+    @apply inline-block w-0.5 h-5 bg-primary align-middle;
+    animation: blink 0.7s infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
